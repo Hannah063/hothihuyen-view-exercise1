@@ -35,14 +35,14 @@ Route::prefix('user')->group(function () {
         return $user ?? 'Cannot find the user with name ' . $userName;
     })->where(['userName' => '[a-zA-Z]+']);
 
+    Route::get('/{userIndex}/post/{postIndex}',function($userIndex,$postIndex){
+        global $users;
+        if(isset($users[$userIndex])){
+            return $users[$userIndex]['posts'][$postIndex];
+        }
+    });
+
     Route::fallback(function () {
         return 'You cannot get like this!';
     });
-});
-
-Route::get('/user/{userIndex}/post/{postIndex}',function($userIndex,$postIndex){
-    global $users;
-    if(isset($users[$userIndex])){
-        return $users[$userIndex]['posts'][$postIndex];
-    }
 });
