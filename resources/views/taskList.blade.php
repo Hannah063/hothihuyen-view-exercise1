@@ -8,10 +8,14 @@
     <title>Task list</title>
 </head>
 <body>
-    @section('css')
-    @section('js')
     <div class="row">
         <p class="border-1">Task list</p>
     </div>
+    @section('css')
+        
+    @endsection
+    @section('js')
+        
+    @endsection
 </body>
 </html>
