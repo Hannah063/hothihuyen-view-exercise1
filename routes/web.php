@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/users', function ()  {
-    global $usersName;
+    global $users;
+    $usersName = implode(', ', array_column($users, 'name'));
     return "<p>The users are: $usersName</p>";
 });

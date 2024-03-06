@@ -54,7 +54,6 @@ $users = [
         'posts' => ['How are you ?', 'I love mangos !'],
     ],
 ];
-$usersName = implode(', ', array_column($users, 'name'));
 
 $app = require_once __DIR__.'/../bootstrap/app.php';
 

@@ -32,7 +32,6 @@ Route::prefix('user')->group(function () {
     Route::get('/{userName}', function ($userName) {
         global $users;
         $user = collect($users)->firstWhere('name', $userName);
-
         return $user ?? 'Cannot find the user with name ' . $userName;
     })->where(['userName' => '[a-zA-Z]+']);
 
